@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Rewriter Settings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 10px;
+            width: 250px; /* You can adjust this size */
+            height: auto;
+        }
+        #statusMessage {
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+        }
+        button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Settings</h3>
+    <label for="apiKeyInput">OpenAI API Key:</label>
+    <input type="text" id="apiKeyInput" placeholder="Enter OpenAI API key" />
+    <button id="enableButton">Enable App</button>
+    <button id="disableButton" disabled>Disable App</button>
+    <p id="statusMessage">App is disabled.</p>
+    <script src="dist/popup.js"></script>
+</body>
+</html>

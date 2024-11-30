@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+      "target": "ESNext", 
+      "module": "ESNext",   // Ensure using ES modules
+      "moduleResolution": "node",
+      "esModuleInterop": true,
+      "outDir": "./dist",
+      "lib": ["dom", "es2020"]
+    },
+    "include": ["vite.config.ts"]
+  }

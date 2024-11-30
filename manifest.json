@@ -1,0 +1,34 @@
+{
+    "manifest_version": 2,
+    "name": "Productive Parenting Communication",
+    "version": "1.0.0",
+    "description": "Rewrite and review messages using ChatGPT.",
+    "permissions": [
+      "activeTab",
+      "storage",
+      "https://api.openai.com/*"
+    ],
+    "background": {
+      "scripts": ["dist/background.js"],
+      "persistent": false
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://*/*"],
+        "js": ["dist/content.js"]
+      }
+    ],
+    "browser_action": {
+      "default_popup": "src/popup/popup.html",
+      "default_icon": {
+        "16": "static/icon.png",
+        "48": "static/icon.png",
+        "128": "static/icon.png"
+      }
+    },
+    "icons": {
+      "16": "static/icon.png",
+      "48": "static/icon.png",
+      "128": "static/icon.png"
+    }
+  }

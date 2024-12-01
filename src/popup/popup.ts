@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("Popup is loaded");
-
     const enableButton = document.getElementById("enableButton") as HTMLButtonElement;
     const disableButton = document.getElementById("disableButton") as HTMLButtonElement;
     const apiKeyInput = document.getElementById("apiKeyInput") as HTMLInputElement;
@@ -9,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Load saved settings from localStorage
     const storedApiKey = localStorage.getItem("openAIKey");
     const isEnabled = localStorage.getItem("enabled") === "true";
+      
 
     if (storedApiKey) {
         apiKeyInput.value = storedApiKey;
@@ -19,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const apiKey = apiKeyInput.value.trim();
         if (apiKey) {
             localStorage.setItem("openAIKey", apiKey);  // Store the API key in localStorage
+            chrome.runtime.sendMessage({ "type": "setOpenAIKey", value: apiKey });
             localStorage.setItem("enabled", "true");  // Enable the app
             updateStatus(true);
             alert("App enabled with your OpenAI API key.");
